@@ -24,7 +24,7 @@ import scipy.signal as signal
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
 from matplotlib.figure import Figure
 import matplotlib.animation as animation
-from matplotlib import style
+# from matplotlib import style
 import platform
 
 # prevents os x going to sleep mode
