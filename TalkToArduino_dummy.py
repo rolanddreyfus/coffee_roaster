@@ -391,7 +391,7 @@ def main():
     root.protocol("WM_DELETE_WINDOW", _quit)  #thanks aurelienvlg
     root.after(1000,update_temp)
     root.mainloop()
-    ser.close()
+#    ser.close()
 
     # releases any power assertion (os x can go sleep again)
     if platform.system() == 'Darwin':

@@ -1,0 +1,9 @@
+time 
+0
+0
+1
+temp 
+0
+30
+30
+temp_avg 
