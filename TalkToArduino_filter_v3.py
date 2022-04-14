@@ -53,11 +53,22 @@ P=40
 points_mean=15
 d_bin=9
 
-reftemp=np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.linspace(80,123,50),np.linspace(123,155,50)]),np.linspace(155,187,50)]),np.linspace(187,199,50)]),np.linspace(199,210,50)]),np.linspace(210,220,50)]),np.linspace(220,229,50)]),np.linspace(229,237,50)]),np.linspace(237,244,50)]),np.linspace(244,250,50)]),np.linspace(250,250,100)]),np.zeros(120)])
+#reftemp=np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.linspace(80,123,50),np.linspace(123,155,50)]),np.linspace(155,187,50)]),np.linspace(187,199,50)]),np.linspace(199,210,50)]),np.linspace(210,220,50)]),np.linspace(220,229,50)]),np.linspace(229,237,50)]),np.linspace(237,244,50)]),np.linspace(244,250,50)]),np.linspace(250,250,100)]),np.zeros(120)])
 #reftemp=np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.hstack([np.linspace(80,123,60),np.linspace(123,155,60)]),np.linspace(155,187,60)]),np.linspace(187,199,60)]),np.linspace(199,210,60)]),np.linspace(210,220,60)]),np.linspace(220,229,60)]),np.linspace(229,237,60)]),np.linspace(237,244,60)]),np.linspace(244,250,60)]),np.linspace(250,250,1)]),np.zeros(120)])
 #reftemp=np.hstack([np.hstack([np.hstack([np.hstack([np.linspace(80,180,4*60),np.linspace(180,210,4*60)]),np.linspace(210,230,30)]),np.linspace(230,250,6*60)]),np.zeros(120)])
 reftemp2=np.hstack([np.hstack([np.hstack([np.hstack([np.linspace(0,180,3*60),np.linspace(180,210,3*60)]),np.linspace(210,230,30)]),np.linspace(230,250,6*60)]),np.zeros(120)])
 
+tf=600
+time=np.linspace(0,tf-1,tf)
+T0=80
+G0=9
+Gf=0.005
+dT=180
+xL=tf*3*G0/dT
+R=(1+xL)*np.log(1+xL)/(xL-1)*(1/xL-Gf/G0)
+a=(xL-1)/(xL*np.pow(np.log(1+xL),R)
+x=3*G0*time/dT
+reftemp=T0+x-a*x*np.pow(np.log(1+x),R)
 
 def main():
 
