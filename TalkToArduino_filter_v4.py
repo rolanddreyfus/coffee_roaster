@@ -60,10 +60,16 @@ reftemp2=np.hstack([np.hstack([np.hstack([np.hstack([np.linspace(0,180,3*60),np.
 
 tf=600
 time=np.linspace(0,tf-1,tf)
-T0=50
-ddT=0.00183333333
-dT0=1
-reftemp=T0+dT0*time-0.5*ddT*time*time
+T0=80
+G0=9
+Gf=0.005
+dT=180
+xL=tf*3*G0/dT
+R=(1+xL)*np.log(1+xL)/(xL-1)*(1/xL-Gf/G0)
+a=(xL-1)/(xL*np.pow(np.log(1+xL),R)
+reftemp=T0+dT*(3*G0*t/dT-a*G0*t/dT*np.pow(np.log(1+3*G0*t/dT),R))
+
+
 
 def main():
 
