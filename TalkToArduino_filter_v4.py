@@ -67,7 +67,7 @@ dT=170.0
 xL=tf*3*G0/dT
 R=(1+xL)*np.log(1+xL)/(xL-1)*(1/xL-Gf/G0)
 a=(xL-1)/(xL*np.pow(np.log(1+xL),R)
-xroli=3*G0*time/dT
+x=3*G0*time/dT
 reftemp=T0+dT*(x-a*x*np.pow(np.log(1+x),R))
 
 
