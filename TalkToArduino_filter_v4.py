@@ -66,9 +66,9 @@ Gf=0.005
 dT=170.0
 xL=tf*3*G0/dT
 R=(1+xL)*numpy.log(1+xL)/(xL-1)*(1/xL-Gf/G0)
-a=(xL-1)/(xL*numpy.pow(numpy.log(1+xL),R))
+a=(xL-1)/(xL*numpy.power(numpy.log(1+xL),R))
 x=3*G0*time/dT
-reftemp=T0+dT*(x-a*x*numpy.pow(numpy.log(1+x),R))
+reftemp=T0+dT*(x-a*x*numpy.power(numpy.log(1+x),R))
 
 
 
