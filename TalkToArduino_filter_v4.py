@@ -59,7 +59,7 @@ d_bin=9
 reftemp2=np.hstack([np.hstack([np.hstack([np.hstack([np.linspace(0,180,3*60),np.linspace(180,210,3*60)]),np.linspace(210,230,30)]),np.linspace(230,250,6*60)]),np.zeros(120)])
 
 tf=600
-time=np.linspace(0,tf-1,tf)
+time_variable=np.linspace(0,tf-1,tf)
 T0=80
 G0=9
 Gf=0.005
@@ -67,7 +67,7 @@ dT=170.0
 xL=tf*3*G0/dT
 R=(1+xL)*numpy.log(1+xL)/(xL-1)*(1/xL-Gf/G0)
 a=(xL-1)/(xL*numpy.power(numpy.log(1+xL),R))
-x=3*G0*time/dT
+x=3*G0*time_variable/dT
 reftemp=T0+dT*(x-a*x*numpy.power(numpy.log(1+x),R))
 
 
