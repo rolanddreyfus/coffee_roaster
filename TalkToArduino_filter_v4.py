@@ -26,7 +26,7 @@ from matplotlib.figure import Figure
 import matplotlib.animation as animation
 from matplotlib import style
 import platform
-
+asdf
 # prevents os x going to sleep mode
 if platform.system() == 'Darwin':
     import caffeine
