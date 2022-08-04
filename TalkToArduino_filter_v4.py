@@ -44,9 +44,9 @@ temp_record=0
 Time=0
 t0=0
 timer_zeit=30
-pgain=0.05
-igain=0.00001
-dgain=0.5
+pgain=0.1
+igain=0.00002
+dgain=1
 I=0
 P0=60
 P=40
@@ -69,7 +69,7 @@ R=(1+xL)*numpy.log(1+xL)/(xL-1)*(1/xL-Gf/G0)
 a=(xL-1)/(xL*numpy.power(numpy.log(1+xL),R))
 x=3*G0*time_variable/dT
 reftemp=T0+dT*(x-a*x*numpy.power(numpy.log(1+x),R))
-
+reftemp=np.hstack([reftemp,np.zeros(120)])
 
 
 def main():
